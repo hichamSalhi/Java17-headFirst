@@ -49,8 +49,7 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
-
+    public static void animalslogic() {
         Main mainClass = new Main();
         ArrayList<Object>  animals = new ArrayList<Object>();
         
@@ -68,7 +67,10 @@ public class Main {
                 System.out.println((Cat) object);
             }
         }
+    }
 
-        
+    public static void main(String[] args) {
+        //animalslogic();
+        Structures.go();
     }
 }
