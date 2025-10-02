@@ -19,6 +19,14 @@ public class Structures {
         ArtistCompare artistCompare = s.new ArtistCompare();
         //Collections.sort(mockSongs); this one was for the Comparable interface
         mockSongs.sort(artistCompare);
+
+        // the inner class example for the comparator
+        mockSongs.sort(new Comparator<SongV2>() {
+            @Override
+            public int compare(SongV2 o1, SongV2 o2) {
+                return o1.getArtist().compareTo(o2.getArtist());
+            }
+        });
         System.out.println(mockSongs);
     }
 
