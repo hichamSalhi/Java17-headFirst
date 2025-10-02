@@ -3,17 +3,17 @@ h1 {
     margin-bottom: 24px;
 }
 
-#main-nav {
+.nav {
     margin-top: 10px;
     list-style: none;
     padding-left: 0;
 }
 
-#main-nav li {
+.nav li {
     display: inline-block;
 }
 
-#main-nav a {
+.nav a {
     color : white;
     background-color: #13a4a4;;
     padding: 5px;
@@ -21,7 +21,24 @@ h1 {
     border-radius: 2px;
 }
 
-.featured {
+.nav .featured {
     background-color: orange;
+}
+
+/*LoVe / HAte : link, visitied, hover, active*/
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color : purple;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: red;
 }
 
