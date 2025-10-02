@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Structures {
@@ -15,9 +16,13 @@ public class Structures {
     public static void goV2() {
         List<SongV2> mockSongs = MockSongs.getSongsV2();
         System.out.println(mockSongs);
+        ArtistCompare artistCompare = s.new ArtistCompare();
+        //Collections.sort(mockSongs); this one was for the Comparable interface
+        mockSongs.sort(artistCompare);
+        System.out.println(mockSongs);
     }
 
-    public class SongV2 {
+    public class SongV2{
         private String title;
         private String artist;
         private int bpm;
@@ -27,6 +32,7 @@ public class Structures {
             this.artist = artist;
             this.bpm = bpm;
         }
+
         public String getTitle() {
             return title;
         }
@@ -39,6 +45,14 @@ public class Structures {
         
         public String toString() {
             return title;
+        }
+    }
+
+
+    class ArtistCompare implements Comparator<SongV2> {
+        @Override
+        public int compare(Structures.SongV2 o1, Structures.SongV2 o2) {
+            return o1.getArtist().compareTo(o2.getArtist());
         }
     }
 
