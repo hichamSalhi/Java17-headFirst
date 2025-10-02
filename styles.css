@@ -15,14 +15,15 @@ h1 {
 
 .nav a {
     color : white;
-    background-color: #13a4a4;;
-    padding: 5px;
+    background-color: #13a4a4;
+    padding: 5px 15px;
     text-decoration: none;
     border-radius: 2px;
 }
 
 .nav .featured {
     background-color: orange;
+    box-shadow: 10px 2px #6f9090;
 }
 
 /*LoVe / HAte : link, visitied, hover, active*/
@@ -42,3 +43,16 @@ a:active {
     color: red;
 }
 
+.footer {
+    color : #666;
+    padding: 18px 0px;
+    background-color: #ccc;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+.footer a {
+    color : inherit;
+    text-decoration: underline;
+}
