@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Structures {
     static Structures s = new Structures();
@@ -30,6 +32,15 @@ public class Structures {
         System.out.println(mockSongs);
     }
 
+    public static void goV3() {
+        List<SongV2> mockSongs = MockSongs.getSongsV2();
+        mockSongs.sort((o1, o2) -> o1.getArtist().compareTo(o2.getArtist()));
+        System.out.println(mockSongs);
+
+        Set<SongV2> mockSongSet = new HashSet<>(mockSongs);
+        System.out.println(mockSongSet);
+    }
+
     public class SongV2{
         private String title;
         private String artist;
@@ -53,6 +64,17 @@ public class Structures {
         
         public String toString() {
             return title;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            SongV2 other = (SongV2) obj;
+            return title.equals(other.getTitle());
+        }
+
+        @Override
+        public int hashCode() {
+            return title.hashCode();
         }
     }
 
