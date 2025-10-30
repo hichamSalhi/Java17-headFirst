@@ -10,11 +10,17 @@ import java.util.concurrent.*;
  * And the Ryan will update the balance to 50, but Monica already withdrew 100, so the final balance should be -50.
  */
 public class RyanAndMonicaTest implements Runnable{
-    private static final BankAccount account = new BankAccount();
+    //private static final BankAccount account = new BankAccount();
+    private static final AtomicBankAccount account = new AtomicBankAccount();
     private final String name;
     private final int amountToSpend;
 
     public RyanAndMonicaTest(BankAccount account, String name, int amountToSpend) {
+        this.name = name;
+        this.amountToSpend = amountToSpend;
+    }
+
+    public RyanAndMonicaTest(AtomicBankAccount account, String name, int amountToSpend) {
         this.name = name;
         this.amountToSpend = amountToSpend;
     }
@@ -29,7 +35,10 @@ public class RyanAndMonicaTest implements Runnable{
     }
 
     //getters and setters
-    public BankAccount getAccount() {
+    /*public BankAccount getAccount() {
+        return account;
+    }*/
+    public AtomicBankAccount getAccount() {
         return account;
     }
     public String getName() {
